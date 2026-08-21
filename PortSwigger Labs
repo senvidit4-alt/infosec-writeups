@@ -1,1 +1,6 @@
+Web Cache Poisioning via unkeyed Header
+\vulnerability type = web cache posing leading to stored xss
 
+capture the /GET request in burp suite then added the unkeyed header X-FORWARDED-PATH with explout server id while entering the XSS script alert(document.cookie) and file paths then triggered the exploit server 
+after changing the paths of the file in exploted server then added ?cb1234 header which refresheses the cache with backend and then in output it will get CACHE : Hit 
+then run the exploit server then refreshed the main homepage the executed script alert(document.cookie) is executed 
